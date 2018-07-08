@@ -1,5 +1,4 @@
 <?php 
-
 class Aluno {
 
 	private $id;
@@ -8,9 +7,10 @@ class Aluno {
 	private $faculdade;
 	private $sala;
 	private $outras;
+	private $cpf;
 
 	public function getId(){
-  	return $this->id;
+  		return $this->id;
 	}
 
 	public function setId($id){
@@ -57,4 +57,11 @@ class Aluno {
 		$this->outras = $outras;
 	}
 
+	public function getCpf(){
+		return $this->cpf;
+	}
+
+	public function setCpf($cpf){
+		$this->cpf = $cpf;
+	}
 }

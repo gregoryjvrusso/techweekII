@@ -19,7 +19,15 @@ require_once("php/cabecalho.php");
         <label for="email">E-mail</label>
       </div>
     </div>
-		<div class="row">
+
+    <div class="row">
+      <div class="input-field col s12 m12">
+        <input placeholder="Cpf" id="cpf" type="text" class="validate" name="cpf">
+        <label for="cpf">CPF</label>
+      </div>
+    </div>
+
+	<div class="row">
 	    <div class="input-field col m6 s12">
 		    <select name="faculdade">
 		      <option value="" disabled selected>Faculdade</option>
@@ -32,8 +40,8 @@ require_once("php/cabecalho.php");
 
   	<div class="row">
       <div class="input-field col s12 m12">
-        <input placeholder="Sala" id="sala" type="text" class="	validate" name="sala">
-        <label for="sala">Sala</label>
+        <input placeholder="Turma" id="sala" type="text" class="validate" name="sala">
+        <label for="sala">Turma</label>
       </div>
     </div>
 
@@ -51,7 +59,7 @@ require_once("php/cabecalho.php");
 			<div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra1"/>
+		        <input type="checkbox" class="filled-in" name="palestra1" value="1"/>
 		        <span>Palestra 1 <small>19h45 às 20h40</small></span>
 		      </label>
 		    </p>
@@ -59,7 +67,7 @@ require_once("php/cabecalho.php");
 	    <div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra2"/>
+		        <input type="checkbox" class="filled-in" name="palestra2" value="2"/>
 		        <span>Palestra 2 <small>21h00 às 21h40</small></span>
 		      </label>
 		    </p>
@@ -71,7 +79,7 @@ require_once("php/cabecalho.php");
 			<div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra1"/>
+		        <input type="checkbox" class="filled-in" name="palestra3" value="3"/>
 		        <span>Palestra 3 <small>19h45 às 20h40</small></span>
 		      </label>
 		    </p>
@@ -79,7 +87,7 @@ require_once("php/cabecalho.php");
 	    <div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra2"/>
+		        <input type="checkbox" class="filled-in" name="palestra4" value="4"/>
 		        <span>Palestra 4 <small>21h00 às 21h40</small></span>
 		      </label>
 		    </p>

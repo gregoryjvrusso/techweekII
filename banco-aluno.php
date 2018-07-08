@@ -16,7 +16,7 @@ function listaAluno($conexao){
 		$aluno->setFaculdade($alunos_array{'faculdade'});
 		$aluno->setSala($alunos_array{'sala'});
 		$aluno->setOutras($alunos_array{'outras'});
-
+		$aluno->setCpf($alunos_array{'cpf'});
 
 		array_push($alunos, $aluno);
 	}
@@ -26,7 +26,7 @@ function listaAluno($conexao){
 
 function insereAluno($conexao, Aluno $aluno)
 {
-	$query = "insert into Alunos (nome_aluno, email, faculdade, sala, outras) values ('{$aluno->getNomeAluno()}', '{$aluno->getEmail()}', '{$aluno->getFaculdade()}', '{$aluno->getSala()}', '{$aluno->getOutras()}')";
+	$query = "insert into Alunos (nome_aluno, email, faculdade, sala, outras, cpf) values ('{$aluno->getNomeAluno()}', '{$aluno->getEmail()}', '{$aluno->getFaculdade()}', '{$aluno->getSala()}', '{$aluno->getOutras()}', '{$aluno->getCpf()}')";
 	$resultadoDaInsersao = mysqli_query($conexao, $query);
 	return $resultadoDaInsersao;
 }
@@ -37,18 +37,20 @@ function removeAluno($conexao, $id) {
     return mysqli_query($conexao, $query);
 }
 
-function buscaAluno($conexao, $id) {
-    $query = "select * from alunos where id_aluno = {$id}";
+function buscaAluno($conexao, $cpf) {
+    $query = "select * from alunos where cpf = '{$cpf}'";
+    
     $resultado = mysqli_query($conexao, $query);
     $aluno_buscado = mysqli_fetch_assoc($resultado);
 
-	$cliente = new Cliente();				
-	$aluno->setId($alunos_array{'aluno_id'});
-	$aluno->setNomeAluno($alunos_array{'nome_aluno'});
-	$aluno->setEmail($alunos_array{'email'});
-	$aluno->setFaculdade($alunos_array{'faculdade'});
-	$aluno->setSala($alunos_array{'sala'});
-	$aluno->setOutras($alunos_array{'outras'});
-
+    $aluno = new Aluno();				
+	$aluno->setId($aluno_buscado{'id_aluno'});
+	$aluno->setNomeAluno($aluno_buscado{'nome_aluno'});
+	$aluno->setEmail($aluno_buscado{'email'});
+	$aluno->setFaculdade($aluno_buscado{'faculdade'});
+	$aluno->setSala($aluno_buscado{'sala'});
+	$aluno->setOutras($aluno_buscado{'outras'});
+	$aluno->setCpf($aluno_buscado{'cpf'});
+	
     return $aluno;
 }
