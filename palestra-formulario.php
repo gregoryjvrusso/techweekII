@@ -1,5 +1,5 @@
 <?php 
-require_once("php/cabecalho.php"); 
+require_once("php/cabecalho-administrador.php"); 
 ?>
 
 <div class="container">

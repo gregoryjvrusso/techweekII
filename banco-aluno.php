@@ -37,6 +37,12 @@ function removeAluno($conexao, $id) {
     return mysqli_query($conexao, $query);
 }
 
+function alteraAluno($conexao, $aluno) {
+    $query = "update Alunos set nome_aluno = '{$aluno->getNomeAluno()}', email = '{$aluno->getEmail()}', faculdade = '{$aluno->getFaculdade()}', sala = '{$aluno->getSala()}', outras = '{$aluno->getOutras()}', cpf = '{$aluno->getCpf()}' where id_aluno = {$aluno->getId()}";
+
+    return mysqli_query($conexao, $query);
+}
+
 function buscaAluno($conexao, $cpf) {
     $query = "select * from alunos where cpf = '{$cpf}'";
     

@@ -1,5 +1,5 @@
 <?php 
-require_once("php/cabecalho.php"); 
+require_once("php/cabecalho-administrador.php"); 
 require_once("banco-aluno.php");
 $id = $_POST['id-editar'];
 $aluno = buscaAlunoId($conexao, $id);

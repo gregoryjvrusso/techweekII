@@ -1,5 +1,5 @@
 <?php 
-require_once("php/cabecalho.php"); 
+require_once("php/cabecalho-administrador.php"); 
 require_once("banco-palestra.php");
 
 $palestras = listaPalestra($conexao);
@@ -45,7 +45,7 @@ $palestras = listaPalestra($conexao);
 						</form>
 					</td>
 					<td>					
-						<form action="presenca-lista-palestra.php" method="post">
+						<form action="confirmacao-lista-presenca.php" method="post">
 							<input type="hidden" name="id-palestra" value="<?= $palestra->getId() ?>" />
 							<button class="waves-effect waves-light green btn">
 								<i class="material-icons">search</i>

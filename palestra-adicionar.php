@@ -15,14 +15,14 @@ $inserir = inserePalestra($conexao, $palestra);
 
 if($inserir) {
 	/*$_SESSION["success"] = "O Aluno <?= nomeAluno; ?> foi adicionado com sucesso!";*/
-	header("Location: index.php");
+	header("Location: palestra-lista.php");
 	die();
 	
 } else {
 	/*$msg = mysqli_error($conexao);
 	
 	$_SESSION["danger"] = "O Aluno não foi adicionado!  <?= $msg ?>";*/
-	header("Location: index.php");
+	header("Location: palestra-lista.php");
 	die();
 }
 

@@ -1,11 +1,11 @@
 <?php 
 require_once("php/cabecalho.php"); 
-require_once("banco-palestra.php");
+require_once("banco-aluno.php");
 
 $id = $_POST['id'];
-removePalestra($conexao, $id);
+removeAluno($conexao, $id);
 //$_SESSION["danger"] = "Cliente removido com sucesso.";
-header("Location: palestra-lista.php");
+header("Location: aluno-lista.php");
 die();
 
 

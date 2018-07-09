@@ -26,9 +26,9 @@ function listaPalestra($conexao){
 function inserePalestra($conexao, Palestra $palestra)
 {
 	$query = "insert into palestras (nome_palestra, local_palestra, data_palestra, limite_vagas, horario) values ('{$palestra->getNome()}', '{$palestra->getLocal()}', '{$palestra->getDataBanco()}', {$palestra->getLimiteVagas()}, '{$palestra->getHorario()}')";
-	var_dump($query);
+	
 	$resultadoDaInsersao = mysqli_query($conexao, $query);
-	var_dump($resultadoDaInsersao);die;
+	
 	return $resultadoDaInsersao;
 }
 
@@ -40,7 +40,7 @@ function removePalestra($conexao, $id) {
 
 function alteraPalestra($conexao, $palestra) {
     $query = "update palestras set nome_palestra = '{$palestra->getNome()}', local_palestra = '{$palestra->getLocal()}', data_palestra = '{$palestra->getDataBanco()}', limite_vagas = {$palestra->getLimiteVagas()}, horario = '{$palestra->getHorario()}' where id_palestra = {$palestra->getId()}";
-   	var_dump($query);
+    
     return mysqli_query($conexao, $query);
 }
 

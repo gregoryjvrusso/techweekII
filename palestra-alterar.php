@@ -13,17 +13,16 @@ $palestra->setHorario($_POST{'horario'});
 $palestra->setLimiteVagas($_POST{'vagas'});
 
 $alterar = alteraPalestra($conexao, $palestra);
-var_dump($alterar);die;
 if($alterar) {
 	/*$_SESSION["success"] = "O Aluno <?= nomeAluno; ?> foi adicionado com sucesso!";*/
-	header("Location: index.php");
+	header("Location: palestra-lista.php");
 	die();
 	
 } else {
 	/*$msg = mysqli_error($conexao);
 	
 	$_SESSION["danger"] = "O Aluno não foi adicionado!  <?= $msg ?>";*/
-	header("Location: index.php");
+	header("Location: palestra-lista.php");
 	die();
 }
 

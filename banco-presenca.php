@@ -43,7 +43,6 @@ function listaPresencaAluno($conexao, $id){
 function listaPresencaPalestra($conexao, $id){
 	$presencas = array();
 	$resultado = mysqli_query($conexao, "select * from presencas where id_palestra = {$id}");
-
 	while($presencas_array = mysqli_fetch_assoc($resultado)){
 
 		$presenca = new Presenca();
@@ -72,6 +71,12 @@ function removePresenca($conexao, $id) {
     return mysqli_query($conexao, $query);
 }
 
+function removePresencaAluno($conexao, $id) {
+    $query = "delete from Presencas where id_alunos = {$id}";
+    
+    return mysqli_query($conexao, $query);
+}
+
 function buscaPresenca($conexao, $id) {
     $query = "select * from alunos where id_aluno = {$id}";
 
@@ -88,4 +93,10 @@ function buscaPresenca($conexao, $id) {
 	$aluno->setCpf($alunos_array{'cpf'});
   
     return $aluno;
+}
+
+function confirmaPresenca($conexao, $id){
+	$query = "update presencas set presenca = 1 where id_alunos = {$id}";
+    $resultado = mysqli_query($conexao, $query);
+    return $resultado;
 }

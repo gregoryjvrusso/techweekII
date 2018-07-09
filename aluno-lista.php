@@ -1,6 +1,9 @@
 <?php 
-require_once("php/cabecalho.php"); 
+require_once("php/cabecalho-administrador.php"); 
 require_once("banco-aluno.php");
+require_once("usuario-logica.php");
+
+verificaUsuario();
 
 $alunos = listaAluno($conexao);
 ?>

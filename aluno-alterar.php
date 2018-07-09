@@ -7,6 +7,7 @@ require_once("class/Aluno.php");
 
 $aluno = new Aluno();
 
+$aluno->setId($_POST{'id'});
 $aluno->setNomeAluno($_POST{'nome_aluno'});
 $aluno->setEmail($_POST{'email'});
 $aluno->setFaculdade($_POST{'faculdade'});
@@ -23,14 +24,14 @@ if(empty($_POST['outras'])){
  	$aluno->setOutras($_POST{'outras'});
 }
 
-$inserir = insereAluno($conexao, $aluno);
+$alterar = alteraAluno($conexao, $aluno);
 
-if($inserir) {
+if($alterar) {
 	/*$_SESSION["success"] = "O Aluno <?= nomeAluno; ?> foi adicionado com sucesso!";*/
-	$alunoBuscado = buscaAluno($conexao, $aluno->getCpf());
+	removePresencaAluno($conexao, $aluno->getId());
 	if(isset($_POST['palestra1'])){
 		$presenca = new Presenca();
-		$presenca->setIdAluno($alunoBuscado->getId());
+		$presenca->setIdAluno($aluno->getId());
 		$presenca->setIdPalestra($_POST['palestra1']);
 		$presenca->setPresenca(0);
 
@@ -38,7 +39,7 @@ if($inserir) {
 	}
 	if(isset($_POST['palestra2'])){
 		$presenca = new Presenca();
-		$presenca->setIdAluno($alunoBuscado->getId());
+		$presenca->setIdAluno($aluno->getId());
 		$presenca->setIdPalestra($_POST['palestra2']);
 		$presenca->setPresenca(0);
 
@@ -46,7 +47,7 @@ if($inserir) {
 	}
 	if(isset($_POST['palestra3'])){
 		$presenca = new Presenca();
-		$presenca->setIdAluno($alunoBuscado->getId());
+		$presenca->setIdAluno($aluno->getId());
 		$presenca->setIdPalestra($_POST['palestra3']);
 		$presenca->setPresenca(0);
 
@@ -54,20 +55,20 @@ if($inserir) {
 	}
 	if(isset($_POST['palestra4'])){
 		$presenca = new Presenca();
-		$presenca->setIdAluno($alunoBuscado->getId());
+		$presenca->setIdAluno($aluno->getId());
 		$presenca->setIdPalestra($_POST['palestra4']);
 		$presenca->setPresenca(0);
 
 		$inserirPresenca = inserePresenca($conexao, $presenca);
 	}
-	header("Location: aluno.php");
+	header("Location: aluno-lista.php");
 	die();
 	
 } else {
 	/*$msg = mysqli_error($conexao);
 	
 	$_SESSION["danger"] = "O Aluno não foi adicionado!  <?= $msg ?>";*/
-	header("Location: aluno.php");
+	header("Location: aluno-lista.php");
 	die();
 }
 
