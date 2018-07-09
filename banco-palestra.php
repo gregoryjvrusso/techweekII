@@ -3,8 +3,8 @@ include("conecta.php");
 require_once("class/Palestra.php");
 
 function listaPalestra($conexao){
-	$palestra = array();
-	$resultado = mysqli_query($conexao, "select * from Palestras");
+	$palestras = array();
+	$resultado = mysqli_query($conexao, "select * from palestras");
 
 	while($palestras_array = mysqli_fetch_assoc($resultado)){
 
@@ -13,26 +13,34 @@ function listaPalestra($conexao){
 		$palestra->setId($palestras_array{'id_palestra'});
 		$palestra->setNome($palestras_array{'nome_palestra'});
 		$palestra->setLocal($palestras_array{'local_palestra'});
-		$palestra->setData($palestras_array{'data_palestra'});
+		$palestra->setDataBanco($palestras_array{'data_palestra'});
 		$palestra->setLimiteVagas($palestras_array{'limite_vagas'});
 		$palestra->setHorario($palestras_array{'horario'});
 
 		array_push($palestras, $palestra);
 	}
 
-	return $palestra;
+	return $palestras;
 }
 
 function inserePalestra($conexao, Palestra $palestra)
 {
-	$query = "insert into palestras (nome_palestra, local_palestra, data_palestra, limite_vagas, horario) values ('{$palestra->getNome()}', '{$palestra->getLocal()}', '{$palestra->getDataBanco()}', {$palestra->getLimiteVagas}, '{$palestra->getHorario()}')";
+	$query = "insert into palestras (nome_palestra, local_palestra, data_palestra, limite_vagas, horario) values ('{$palestra->getNome()}', '{$palestra->getLocal()}', '{$palestra->getDataBanco()}', {$palestra->getLimiteVagas()}, '{$palestra->getHorario()}')";
+	var_dump($query);
 	$resultadoDaInsersao = mysqli_query($conexao, $query);
+	var_dump($resultadoDaInsersao);die;
 	return $resultadoDaInsersao;
 }
 
 function removePalestra($conexao, $id) {
-    $query = "delete from Palestras where id_palestra = {$id}";
+    $query = "delete from palestras where id_palestra = {$id}";
     
+    return mysqli_query($conexao, $query);
+}
+
+function alteraPalestra($conexao, $palestra) {
+    $query = "update palestras set nome_palestra = '{$palestra->getNome()}', local_palestra = '{$palestra->getLocal()}', data_palestra = '{$palestra->getDataBanco()}', limite_vagas = {$palestra->getLimiteVagas()}, horario = '{$palestra->getHorario()}' where id_palestra = {$palestra->getId()}";
+   	var_dump($query);
     return mysqli_query($conexao, $query);
 }
 

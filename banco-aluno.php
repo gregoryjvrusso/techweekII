@@ -54,3 +54,21 @@ function buscaAluno($conexao, $cpf) {
 	
     return $aluno;
 }
+
+function buscaAlunoId($conexao, $id) {
+    $query = "select * from alunos where id_aluno = {$id}";
+    
+    $resultado = mysqli_query($conexao, $query);
+    $aluno_buscado = mysqli_fetch_assoc($resultado);
+
+    $aluno = new Aluno();				
+	$aluno->setId($aluno_buscado{'id_aluno'});
+	$aluno->setNomeAluno($aluno_buscado{'nome_aluno'});
+	$aluno->setEmail($aluno_buscado{'email'});
+	$aluno->setFaculdade($aluno_buscado{'faculdade'});
+	$aluno->setSala($aluno_buscado{'sala'});
+	$aluno->setOutras($aluno_buscado{'outras'});
+	$aluno->setCpf($aluno_buscado{'cpf'});
+	
+    return $aluno;
+}

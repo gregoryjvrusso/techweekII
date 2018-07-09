@@ -40,6 +40,15 @@ class Palestra {
 		return $dataD . "/" . $dataM;
 	}
 
+	public function getDataAlterar(){
+		$aux1 = explode("-", $this->data);
+		$dataD = $aux1[2]; 
+		$dataM = $aux1[1]; 
+		$dataA = $aux1[0];
+
+		return $dataD . "/" . $dataM . "/" . $dataA;
+	}	
+
 	public function getDataBanco(){
 		return $this->data;
 	}

@@ -40,6 +40,25 @@ function listaPresencaAluno($conexao, $id){
 	return $presencas;
 }
 
+function listaPresencaPalestra($conexao, $id){
+	$presencas = array();
+	$resultado = mysqli_query($conexao, "select * from presencas where id_palestra = {$id}");
+
+	while($presencas_array = mysqli_fetch_assoc($resultado)){
+
+		$presenca = new Presenca();
+
+		$presenca->setId($presencas_array{'id_presencas'});
+		$presenca->setIdPalestra($presencas_array{'id_palestra'});
+		$presenca->setIdAluno($presencas_array{'id_alunos'});
+		$presenca->setPresenca($presencas_array{'presenca'});
+
+		array_push($presencas, $presenca);
+	}
+
+	return $presencas;
+}
+
 function inserePresenca($conexao, Presenca $presenca)
 {
 	$query = "insert into presencas (id_palestra, id_alunos, presenca) values ({$presenca->getIdPalestra()}, {$presenca->getIdAluno()}, {$presenca->getPresenca()})";

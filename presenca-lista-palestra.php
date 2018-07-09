@@ -1,46 +1,53 @@
 <?php 
 require_once("php/cabecalho.php"); 
 require_once("banco-aluno.php");
+require_once("banco-presenca.php");
+require_once("banco-palestra.php");
 
-$alunos = listaAluno($conexao);
+$palestra = buscaPalestra($conexao, $_POST['id-palestra']);
+
+$presencas = listaPresencaPalestra($conexao, $palestra->getId());
 ?>
 
 <div class="container">
-	<h2>Listagem de Alunos</h2>
+	<h2>Listagem de Presença</h2>
+	<h3><?= $palestra->getNome() ?></h3>
 	
 	<div class="col s12 m12">
 		<table class="highlight">
   		<thead>
 				<tr>
-					<th>Id</th>
-      		<th>Nome</th>
-      		<th>CPF</th>
-      		<th>E-mail</th>
-      		<th>Faculdade</th>
+					<th>Data</th>
+      		<th>Palestra</th>
+      		<th>Presença</th>
       		<th colspan="3">Opções</th>
     		</tr>
   		</thead>
 
       <tbody>
       	<?php 
-				foreach($alunos as $aluno) { ?>
+			foreach($presencas as $presenca) { 
+				$aluno = buscaAlunoId($conexao, $presenca->getIdAluno()); ?>
+				
         <tr>
-          <td><?= $aluno->getId() ?></td>
-          <td><?= $aluno->getNomeAluno() ?></td>
+        	<td><?= $aluno->getNomeAluno() ?></td>
           <td><?= $aluno->getCpf() ?></td>
-          <td><?= $aluno->getEmail() ?></td>
-          <td><?= $aluno->getFaculdade() ?></td>
+          <td>
+          	<?=
+          		$presenca->getPresenca() == 1 ? "Presente" : "Faltou";
+          	?>	
+        	</td>
         	<td>
-						<form action="aluno-deletar.php" method="post">
-        			<input type="hidden" name="id" value="<?= $aluno->getId() ?>" />
+						<form action="alunos-deletar.php" method="post">
+        			<input type="hidden" name="id" value="<?= $presenca->getId() ?>" />
 	            <button class="waves-effect waves-light red btn">
 	            	<i class="material-icons">delete_forever</i>
 							</button>
       			</form>
 					</td>
 					<td>					
-						<form action="aluno-formulario-alterar.php" method="post">
-							<input type="hidden" name="id-editar" value="<?= $aluno->getId() ?>" />
+						<form action="alunos-alterar-formulario.php" method="post">
+							<input type="hidden" name="id-editar" value="<?= $presenca->getId() ?>" />
 							<button class="waves-effect waves-light orange btn">
 								<i class="material-icons">edit</i>
 							</button>
