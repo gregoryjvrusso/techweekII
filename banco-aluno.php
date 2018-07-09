@@ -10,7 +10,7 @@ function listaAluno($conexao){
 
 		$aluno = new Aluno();
 
-		$aluno->setId($alunos_array{'aluno_id'});
+		$aluno->setId($alunos_array{'id_aluno'});
 		$aluno->setNomeAluno($alunos_array{'nome_aluno'});
 		$aluno->setEmail($alunos_array{'email'});
 		$aluno->setFaculdade($alunos_array{'faculdade'});
