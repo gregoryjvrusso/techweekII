@@ -57,8 +57,9 @@ $presencas = listaPresencaAluno($conexao, $aluno->getId());
 						</form>
 					</td>
 					<td>					
-						<form action="presenca-lista-aluno.php" method="post">
-							<input type="hidden" name="id-editar" value="<?= $aluno->getId() ?>" />
+						<form action="aluno-certificado-palestra.php" method="post">
+							<input type="hidden" name="id-aluno" value="<?= $aluno->getId() ?>" />
+							<input type="hidden" name="id-palestra" value="<?= $palestra->getId() ?>">
 							<button class="waves-effect waves-light green btn">
 								<i class="material-icons">search</i>
 							</button>

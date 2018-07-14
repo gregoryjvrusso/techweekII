@@ -4,6 +4,7 @@ require_once("banco-presenca.php");
 require_once("banco-palestra.php");
 require_once("usuario-logica.php");
 
+
 $palestra = buscaPalestra($conexao, $_POST['id']);
 
 $presencas = buscaListaChamada($conexao, $palestra->getId());
@@ -16,12 +17,24 @@ $html = '<!doctype html>
 		<style>
 			body{
 				background-image: url("img/fundo-certificado.jpg");
+				font-family: Helvetica;
 			}
-			h1, h2{
+			p, h2{
 				text-align: center;
 		 	}
 		 	table {
   			width: 43em;
+			}
+			#texto-principal{
+				font-size: 35px;
+				font-weight: bold;
+				margin-bottom: 0px;
+			}
+			#texto-secundario{
+				font-size: 25px;
+				font-weight: bold;
+				text-transform: uppercase;
+				margin-top: -20px;
 			}
 			thead {
 			  border-top: 1px solid #a5a5a5;
@@ -32,11 +45,15 @@ $html = '<!doctype html>
 				text-align: center;
 				height: 20px;
 			}
+			small{
+				font-size: 18px;
+				font-weight: none;
+			}
 		</style>
 	</head>
 	<body>
-			<h1>Lista de Presença</h1>
-		<h2>' . $palestra->getNome() . '</h2>
+		<p id="texto-principal">LISTA DE PRESENÇA</p>
+		<p id="texto-secundario">' . $palestra->getNome() . ' - <small> ' . $palestra->getData() . '</small></p>
 		<table>
 			<thead>
 				<tr>
@@ -66,6 +83,7 @@ $dompdf->load_html($html);
 $dompdf->set_paper('A4','portrait');
 
 $dompdf->render();
+
 
 $dompdf->stream(
     "saida.pdf", 
