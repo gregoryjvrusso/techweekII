@@ -1,5 +1,5 @@
 <?php 
-require_once("php/cabecalho.php"); 
+require_once("php/cabecalho-administrador.php"); 
 require_once("banco-presenca.php");
 require_once("class/Presenca.php");
 

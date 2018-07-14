@@ -3,6 +3,9 @@ require_once("php/cabecalho-administrador.php");
 require_once("banco-aluno.php");
 require_once("banco-presenca.php");
 require_once("banco-palestra.php");
+require_once("usuario-logica.php");
+
+verificaUsuario();
 
 $aluno = buscaAluno($conexao, $_POST['cpf-lista-aluno']);
 

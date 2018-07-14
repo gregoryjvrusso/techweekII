@@ -3,6 +3,9 @@ require_once("php/cabecalho-administrador.php");
 require_once("banco-aluno.php");
 require_once("banco-presenca.php");
 require_once("banco-palestra.php");
+require_once("usuario-logica.php");
+
+verificaUsuario();
 
 $palestra = buscaPalestra($conexao, $_POST['id-palestra']);
 
@@ -12,7 +15,6 @@ $presencas = listaPresencaPalestra($conexao, $palestra->getId());
 <div class="container">
 	<h2>Listagem de Presença</h2>
 	<h3><?= $palestra->getNome() ?></h3>
-	
 	<div class="col s12 m12">
 		<table class="highlight">
   		<thead>

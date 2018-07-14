@@ -30,18 +30,18 @@ error_reporting(E_ALL ^ E_NOTICE);
 	  		</li>
 		    <li><a href="badges.html">Eventos</a></li>
 		    <li><a href="collapsible.html">Sobre nós</a></li>
+		    <li><a href="logout.php">Logout</a></li>
 		  </ul>
     </div>
   </div>
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-  <li><a href="sass.html">Sass</a></li>
-  <li><a href="badges.html">Components</a></li>
-  <li><a href="collapsible.html">Javascript</a></li>
-  <li><a href="mobile.html">Mobile</a></li>
-</ul>
+  <li><a href="eventos.php">Eventos</a></li>
+  <li><a href="sobre-nos.php">Sobre nós</a></li>
+  <li><a href="logout.php">Logout</a></li>
 
+</ul>
 <ul id="dropdownPalestra" class="dropdown-content">
   <li><a href="palestra-lista.php">Painel</a></li>
   <li><a href="palestra-formulario.php">Adicionar</a></li>

@@ -1,7 +1,9 @@
 <?php 
 require_once("php/cabecalho-administrador.php"); 
 require_once("banco-palestra.php"); 
+require_once("usuario-logica.php");
 
+verificaUsuario();
 $id = $_POST['id-editar'];
 $palestra = buscaPalestra($conexao, $id);
 ?>
