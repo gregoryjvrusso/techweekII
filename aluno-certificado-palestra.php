@@ -1,5 +1,5 @@
 <?php
-$pdf = App::make('dompdf.wrapper');
+require_once("dompdf/dompdf_config.inc.php");
 require_once("banco-aluno.php");
 require_once("banco-palestra.php");
 require_once("usuario-logica.php");
@@ -106,7 +106,6 @@ if (smtpmailer('gregoryjvrusso@gmail.com', 'techweekcubatao@gmail.com', 'Nome do
 if (!empty($error)) echo $error;
 
 function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
-	global $error;
 	$mail = new PHPMailer();
 	$mail->IsSMTP();		// Ativar SMTP
 	$mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
