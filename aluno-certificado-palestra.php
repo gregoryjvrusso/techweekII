@@ -1,5 +1,5 @@
 <?php
-require_once("dompdf/dompdf_config.inc.php");
+require_once("dompdff/dompdf_config.inc.php");
 require_once("banco-aluno.php");
 require_once("banco-palestra.php");
 require_once("usuario-logica.php");
