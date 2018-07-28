@@ -1,9 +1,9 @@
 <?php
-require_once("/dompdf/dompdf_config.inc.php");
+require_once("dompdf/dompdf_config.inc.php");
 require_once("banco-aluno.php");
 require_once("banco-palestra.php");
 require_once("usuario-logica.php");
-require_once("/PHPMailer/src/PHPMailer.php");
+require_once("PHPMailer/src/PHPMailer.php");
 
 $aluno = buscaAlunoId($conexao, $_POST['id-aluno']);
 
