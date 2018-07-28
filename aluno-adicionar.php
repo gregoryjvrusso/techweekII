@@ -2,8 +2,8 @@
 require_once("php/cabecalho.php"); 
 require_once("banco-aluno.php");
 require_once("banco-presenca.php");
-require_once("class/Presenca.php");
-require_once("class/Aluno.php");
+require_once("Class/Presenca.php");
+require_once("Class/Aluno.php");
 
 $aluno = new Aluno();
 

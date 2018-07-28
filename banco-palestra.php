@@ -1,6 +1,6 @@
 <?php 
 include("conecta.php");
-require_once("class/Palestra.php");
+require_once("Class/Palestra.php");
 
 function listaPalestra($conexao){
 	$palestras = array();

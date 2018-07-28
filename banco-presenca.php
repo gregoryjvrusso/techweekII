@@ -1,6 +1,6 @@
 <?php 
 include("conecta.php");
-require_once("class/Presenca.php");
+require_once("Class/Presenca.php");
 
 function listaPresenca($conexao){
 	$presenca = array();

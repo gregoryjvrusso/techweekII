@@ -1,7 +1,7 @@
 <?php 
 require_once("php/cabecalho-administrador.php"); 
 require_once("banco-presenca.php");
-require_once("class/Presenca.php");
+require_once("Class/Presenca.php");
 
 $presencas = listaPresencaPalestra($conexao, $_POST['id']);
 

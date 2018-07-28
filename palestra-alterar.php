@@ -1,7 +1,7 @@
 <?php 
 require_once("php/cabecalho.php"); 
 require_once("banco-palestra.php");
-require_once("class/Palestra.php");
+require_once("Class/Palestra.php");
 
 $palestra = new Palestra();
 
