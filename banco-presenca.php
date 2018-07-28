@@ -102,7 +102,7 @@ function confirmaPresenca($conexao, $id){
 }
 
 function buscaListaChamada($conexao, $id){
-	$query = "select a.nome_aluno, a.cpf from presencas as p inner join Alunos as a on p.id_alunos = a.id_aluno where p.id_palestra = {$id} order by a.nome_aluno";
+	$query = "select a.nome_aluno, a.cpf from presencas as p inner join alunos as a on p.id_alunos = a.id_aluno where p.id_palestra = {$id} order by a.nome_aluno";
 	$resultado = mysqli_query($conexao, $query);
     return $resultado;
 }
