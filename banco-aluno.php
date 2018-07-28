@@ -4,7 +4,7 @@ require_once("Class/Aluno.php");
 
 function listaAluno($conexao){
 	$alunos = array();
-	$resultado = mysqli_query($conexao, "select * from Alunos");
+	$resultado = mysqli_query($conexao, "select * from alunos");
 
 	while($alunos_array = mysqli_fetch_assoc($resultado)){
 
