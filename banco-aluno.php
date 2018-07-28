@@ -1,6 +1,6 @@
 <?php 
 include("conecta.php");
-require_once("Class/Aluno.php");
+require_once("class/Aluno.php");
 
 function listaAluno($conexao){
 	$alunos = array();
