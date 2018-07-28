@@ -12,7 +12,7 @@ $html = '<!doctype html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Atenção, apenas um teste</title>
+		<title>Certificado - Tech Week</title>
 		<style>
 			body{
 				background-image: url("img/fundo-certificado.jpg");

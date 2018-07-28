@@ -51,7 +51,7 @@ $alunos = listaAluno($conexao);
 					</td>
 					<td>					
 						<form action="presenca-lista-aluno.php" method="post">
-							<input type="hidden" name="cpf-lista-aluno" value="<?= $aluno->getCpf() ?>" />
+							<input type="hidden" name="aluno-id" value="<?= $aluno->getId() ?>" />
 							<button class="waves-effect waves-light green btn">
 								<i class="material-icons">search</i>
 							</button>

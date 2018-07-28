@@ -7,7 +7,7 @@ require_once("usuario-logica.php");
 
 verificaUsuario();
 
-$aluno = buscaAluno($conexao, $_POST['cpf-lista-aluno']);
+$aluno = buscaAlunoId($conexao, $_POST['aluno-id']);
 
 $presencas = listaPresencaAluno($conexao, $aluno->getId());
 ?>
