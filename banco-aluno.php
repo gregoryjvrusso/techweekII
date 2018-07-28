@@ -26,19 +26,19 @@ function listaAluno($conexao){
 
 function insereAluno($conexao, Aluno $aluno)
 {
-	$query = "insert into Alunos (nome_aluno, email, faculdade, sala, outras, cpf) values ('{$aluno->getNomeAluno()}', '{$aluno->getEmail()}', '{$aluno->getFaculdade()}', '{$aluno->getSala()}', '{$aluno->getOutras()}', '{$aluno->getCpf()}')";
+	$query = "insert into alunos (nome_aluno, email, faculdade, sala, outras, cpf) values ('{$aluno->getNomeAluno()}', '{$aluno->getEmail()}', '{$aluno->getFaculdade()}', '{$aluno->getSala()}', '{$aluno->getOutras()}', '{$aluno->getCpf()}')";
 	$resultadoDaInsersao = mysqli_query($conexao, $query);
 	return $resultadoDaInsersao;
 }
 
 function removeAluno($conexao, $id) {
-    $query = "delete from Alunos where id_aluno = {$id}";
+    $query = "delete from alunos where id_aluno = {$id}";
     
     return mysqli_query($conexao, $query);
 }
 
 function alteraAluno($conexao, $aluno) {
-    $query = "update Alunos set nome_aluno = '{$aluno->getNomeAluno()}', email = '{$aluno->getEmail()}', faculdade = '{$aluno->getFaculdade()}', sala = '{$aluno->getSala()}', outras = '{$aluno->getOutras()}', cpf = '{$aluno->getCpf()}' where id_aluno = {$aluno->getId()}";
+    $query = "update alunos set nome_aluno = '{$aluno->getNomeAluno()}', email = '{$aluno->getEmail()}', faculdade = '{$aluno->getFaculdade()}', sala = '{$aluno->getSala()}', outras = '{$aluno->getOutras()}', cpf = '{$aluno->getCpf()}' where id_aluno = {$aluno->getId()}";
 
     return mysqli_query($conexao, $query);
 }

@@ -4,7 +4,7 @@ require_once("Class/Presenca.php");
 
 function listaPresenca($conexao){
 	$presenca = array();
-	$resultado = mysqli_query($conexao, "select * from Presencas");
+	$resultado = mysqli_query($conexao, "select * from presencas");
 
 	while($presencas_array = mysqli_fetch_assoc($resultado)){
 
@@ -66,13 +66,13 @@ function inserePresenca($conexao, Presenca $presenca)
 }
 
 function removePresenca($conexao, $id) {
-    $query = "delete from Presencas where id_presencas = {$id}";
+    $query = "delete from presencas where id_presencas = {$id}";
     
     return mysqli_query($conexao, $query);
 }
 
 function removePresencaAluno($conexao, $id) {
-    $query = "delete from Presencas where id_alunos = {$id}";
+    $query = "delete from presencas where id_alunos = {$id}";
     
     return mysqli_query($conexao, $query);
 }
@@ -102,7 +102,7 @@ function confirmaPresenca($conexao, $id){
 }
 
 function buscaListaChamada($conexao, $id){
-	$query = "select a.nome_aluno, a.cpf from Presencas as p inner join Alunos as a on p.id_alunos = a.id_aluno where p.id_palestra = {$id} order by a.nome_aluno";
+	$query = "select a.nome_aluno, a.cpf from presencas as p inner join Alunos as a on p.id_alunos = a.id_aluno where p.id_palestra = {$id} order by a.nome_aluno";
 	$resultado = mysqli_query($conexao, $query);
     return $resultado;
 }
