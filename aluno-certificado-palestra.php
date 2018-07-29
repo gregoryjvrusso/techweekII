@@ -98,7 +98,7 @@ $output = $dompdf->output();
 
 file_put_contents('asdasda.pdf', $output);
 
-
+/*
 $mail = new PHPMailer();
 $mail->IsSMTP(); 
 $mail->CharSet = 'UTF-8';
@@ -124,3 +124,4 @@ if(!$mail->Send()) // Envia o email
  echo "Erro no envio da mensagem";
  } 
 ?>
+*/
