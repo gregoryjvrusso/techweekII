@@ -3,7 +3,13 @@ require_once("dompdff/dompdf_config.inc.php");
 require_once("banco-aluno.php");
 require_once("banco-palestra.php");
 require_once("usuario-logica.php");
-require_once("PHPMailer/src/PHPMailer.php");
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require '/PHPMailer/src/PHPMailer.php';
+require '/PHPMailer/src/SMTP.php';
 
 $aluno = buscaAlunoId($conexao, $_POST['id-aluno']);
 
@@ -94,3 +100,24 @@ $dompdf->stream(
         "Attachment" => true 
     )
 );
+
+$mail = new PHPMailer;
+$mail->IsSMTP(true); // Define que a mensagem será SMTP
+$mail->Host = "smtp.gmail.com"; // Endereço do servidor SMTP
+$mail->Port = 587;
+$mail->SMTPAuth = true
+$mail->SMTPSecure = 'ssl';
+
+$mail->setFrom('gregoryjvrusso@gmail.com', 'Your Name');
+$mail->addAddress('gregoryjvrusso@gmail.com', 'My Friend');
+$mail->SMTPDebug  = 1; 
+$mail->Subject = 'An HTML Message';
+$mail->isHTML(true);
+$mail->Body = 'Hello, <b>my friend</b>! This message uses HTML!';
+var_dump($mail);
+if(!$mail->send()) {
+  echo 'Message was not sent.';
+  echo 'Mailer error: ' . $mail->ErrorInfo;
+} else {
+  echo 'Message has been sent.';
+}
