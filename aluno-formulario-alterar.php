@@ -8,6 +8,7 @@ verificaUsuario();
 
 $id = $_POST['id-editar'];
 $aluno = buscaAlunoId($conexao, $id);
+$presencas = listaPresencaAluno($conexao, $aluno->getId());
 ?>
 
 <div class="container">
@@ -63,15 +64,13 @@ $aluno = buscaAlunoId($conexao, $id);
     </div>
 		<div class="divider"></div>
 		<h5>Palestras</h5>
-		
-		<?php $presencas = listaPresencaAluno($conexao, $aluno->getId());?>
 
 		<h6>25 de Outubro -Terça-Feira</h6>
 		<div class="row">
 			<div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra1" value="1" <?php $aluno->buscarPalestrasAlterar($presencas, 1); ?>>
+		        <input type="checkbox" class="filled-in" name="palestra1" value="1" "<?= $aluno->buscarPalestrasAlterar($presencas, 1);?>">
 		        <span>Palestra 1 <small>19h45 às 20h40</small></span>
 		      </label>
 		    </p>
