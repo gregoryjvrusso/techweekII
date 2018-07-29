@@ -10,9 +10,6 @@ require_once("banco-aluno.php");
 require_once("banco-palestra.php");
 require_once("usuario-logica.php");
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
 require 'PHPMailer/src/Exception.php';
 require '/PHPMailer/src/PHPMailer.php';
 require '/PHPMailer/src/SMTP.php';
