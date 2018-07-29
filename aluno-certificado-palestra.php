@@ -107,7 +107,7 @@ $dompdf->stream(
     )
 );
 
-$mail = new PHPMailer;
+$mail = new PHPMailer(true);
 try {
     $mail->SMTPDebug = 2;                              
     $mail->isSMTP();                            
