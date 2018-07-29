@@ -63,7 +63,22 @@ $aluno = buscaAlunoId($conexao, $id);
     </div>
 		<div class="divider"></div>
 		<h5>Palestras</h5>
-
+		<?php 
+			function buscarPalestrasAlterar($aluno, $idPalestra){
+				$presencas = listaPresencaAluno($conexao, $aluno->id);
+				$autenticador = false;
+				foreach($presencas as $presenca){
+					var_dump($presenca);
+					if($presenca->getIdPalestra() == $idPalestra)
+						$autenticador = true;
+				}
+				var_dump($autenticador);die;
+				if($autenticador)
+					return "checked";
+				else
+					return null;
+			}
+		?>
 		<h6>25 de Outubro -Terça-Feira</h6>
 		<div class="row">
 			<div class="col m6 s12">
@@ -111,19 +126,3 @@ $aluno = buscaAlunoId($conexao, $id);
 
 
 <?php include("php/rodape.php");?> 
-<?php 
-	function buscarPalestrasAlterar($aluno, $idPalestra){
-		$presencas = listaPresencaAluno($conexao, $aluno->id);
-		$autenticador = false;
-		foreach($presencas as $presenca){
-			var_dump($presenca);
-			if($presenca->getIdPalestra() == $idPalestra)
-				$autenticador = true;
-		}
-		var_dump($autenticador);die;
-		if($autenticador)
-			return "checked";
-		else
-			return null;
-	}
-?>
