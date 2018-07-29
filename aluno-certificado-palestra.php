@@ -109,7 +109,7 @@ try {
     $mail->SMTPSecure = 'tls';                            
     $mail->SMTPAuth = true;                               
     $mail->Username = 'techweekcubatao@gmail.com';                
-    $mail->Password = 'Techweek2016';                           
+    $mail->Password = 'techweek2016';                           
     //Recipients
     $mail->setFrom('techweekcubatao@gmail.com', 'TechWeek - IFSP - Cubatão');
     $mail->addAddress($aluno->getEmail(), $aluno->getPrimeiroNome());     
