@@ -2,10 +2,11 @@
 //Load Composer's autoloader
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use Dompdf\Dompdf;
 
 require 'vendor/autoload.php';
 
-require_once("dompdff/dompdf_config.inc.php");
+require_once 'dompdf/autoload.inc.php';
 require_once("banco-aluno.php");
 require_once("banco-palestra.php");
 require_once("usuario-logica.php");
