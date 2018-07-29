@@ -72,7 +72,7 @@ class Aluno {
 		$this->cpf = $cpf;
 	}
 
-	function buscarPalestrasAlterar($idPalestra){
+	public function buscarPalestrasAlterar($idPalestra){
 		var_dump($this->$id);
 		var_dump($conexao);
 		var_dump($idPalestra);
