@@ -21,6 +21,11 @@ class Aluno {
 		return $this->nome_aluno;
 	}
 
+	public function getPrimeiroNome(){
+		$nome = explode(" ", $this->nome_aluno);
+		return $nome[0];
+	}
+
 	public function setNomeAluno($nome){
 		$this->nome_aluno = $nome;
 	}

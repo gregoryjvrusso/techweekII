@@ -102,25 +102,25 @@ $dompdf->render();
 
 $mail = new PHPMailer(true);
 try {
-    $mail->SMTPDebug = 2;                              
+    $mail->SMTPDebug = 0;                              
     $mail->isSMTP();                            
 	$mail->Host = 'smtp.gmail.com';
 	$mail->Port = 587;
     $mail->SMTPSecure = 'tls';                            
     $mail->SMTPAuth = true;                               
-    $mail->Username = 'gregoryjvrusso@gmail.com';                
-    $mail->Password = 'savoia1914';                           
+    $mail->Username = 'techweekcubatao@gmail.com';                
+    $mail->Password = 'Techweek2016';                           
     //Recipients
-    $mail->setFrom('gregoryjvrusso@gmail.com', 'Mailer');
-    $mail->addAddress('gregory_savoia@gmail.com', 'Joe User');     
+    $mail->setFrom('techweekcubatao@gmail.com', 'TechWeek - IFSP - Cubatão');
+    $mail->addAddress($aluno->getEmail(), $aluno->getPrimeiroNome());     
 
     $mail->isHTML(true);                                  // Set email format to 
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-    $mail->addStringAttachment($dompdf->output(), 'test.pdf');
+    $mail->Subject = 'Certificado - ' . $palestra->getNome();
+    $mail->Body    = 'Prezado, ' . $aluno->getPrimeiroNome() . '.<br><br>Segue em anexo o certificado de presença da palestra ' . $palestra->getNome() . '<br><br>Atenciosamento, <br>Organização da Techweek.';
+    $mail->AltBody = 'Prezado, ' . $aluno->getPrimeiroNome() . '. Segue em anexo o certificado de presença da palestra ' . $palestra->getNome() . 'Atenciosamento, Organização da Techweek.';
+    $mail->addStringAttachment($dompdf->output(), 'certificado.pdf');
     $mail->send();
-    echo 'Message has been sent';
+    header("Location: aluno-lista.php");
 } catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
