@@ -23,7 +23,7 @@ $presencas = listaPresencaAluno($conexao, $aluno->getId());
 					<th>Data</th>
       		<th>Palestra</th>
       		<th>Presença</th>
-      		<th colspan="3">Opções</th>
+      		<th colspan="4">Opções</th>
     		</tr>
   		</thead>
 
@@ -62,6 +62,15 @@ $presencas = listaPresencaAluno($conexao, $aluno->getId());
 							<input type="hidden" name="id-palestra" value="<?= $palestra->getId() ?>">
 							<button class="waves-effect waves-light green btn">
 								<i class="material-icons">search</i>
+							</button>
+						</form>
+					</td>
+					<td>					
+						<form action="aluno-enviar-certificado.php" method="post">
+							<input type="hidden" name="id-aluno" value="<?= $aluno->getId() ?>" />
+							<input type="hidden" name="id-palestra" value="<?= $palestra->getId() ?>">
+							<button class="waves-effect waves-light green btn">
+								<i class="material-icons">email</i>
 							</button>
 						</form>
 					</td>
