@@ -38,12 +38,12 @@ $html = '<!doctype html>
 				font-weight: bold;
 				font-size: 18px;
 				margin-top: 0px;
-				margin-bottom: -25px;
+				margin-bottom: 0px;
 			}
 			.texto-terceiro{
 				font-size: 14px;
 				margin-top: 0px;
-				margin-bottom: -25px;
+				margin-bottom: 0px;
 			}
 			#brasao{
 				width: 120px;
@@ -55,7 +55,7 @@ $html = '<!doctype html>
 				margin-bottom: 25px;
 			}
 			#texto-principal{
-				margin-bottom: -10px;
+				margin-bottom: 0px;
 			}
 			#texto-certificado{
 				width: 70%;
