@@ -95,35 +95,28 @@ $dompdf->stream(
     )
 );
 
-define('GUSER', 'techweekcubatao@gmail.com');	// <-- Insira aqui o seu GMail
-define('GPWD', 'Techweek2016');		// <-- Insira aqui a senha do seu GMail
+$mail = new PHPMailer();
+$mail->IsSMTP(); 
+$mail->CharSet = 'UTF-8';
+$mail->True;
+$mail->Host = "smtp.gmail.com"; // Servidor SMTP
+$mail->SMTPSecure = "tls"; // conexão segura com TLS
+$mail->Port = 587; 
+$mail->SMTPAuth = true; // Caso o servidor SMTP precise de autenticação
+$mail->Username = "gregoryjvrusso@gmail.com"; // SMTP username
+$mail->Password = "savoia1914"; // SMTP password
+$mail->From = "gregoryjvrusso@gmail.com"; // From
+$mail->FromName = "Sua Empresa" ; // Nome de quem envia o email
+$mail->AddAddress($mailDestino, $nome); // Email e nome de quem receberá //Responder
+$mail->WordWrap = 50; // Definir quebra de linha
+$mail->IsHTML = true ; // Enviar como HTML
+$mail->Subject = $assunto ; // Assunto
+$mail->Body = '<br/>' . 'Gregory' . '<br/>' ; //Corpo da mensagem caso seja HTML
 
-
-if (smtpmailer('gregoryjvrusso@gmail.com', 'techweekcubatao@gmail.com', 'Nome do Enviador', 'Assunto do Email', 'teste')) {
-
-	Header("location:http://www.dominio.com.br/obrigado.html"); // Redireciona para uma página de obrigado.
-}
-if (!empty($error)) echo $error;
-
-function smtpmailer($para, $de, $de_nome, $assunto, $corpo) { 
-	$mail = new PHPMailer();
-	$mail->IsSMTP();		// Ativar SMTP
-	$mail->SMTPDebug = 0;		// Debugar: 1 = erros e mensagens, 2 = mensagens apenas
-	$mail->SMTPAuth = true;		// Autenticação ativada
-	$mail->SMTPSecure = 'ssl';	// SSL REQUERIDO pelo GMail
-	$mail->Host = 'smtp.gmail.com';	// SMTP utilizado
-	$mail->Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
-	$mail->Username = GUSER;
-	$mail->Password = GPWD;
-	$mail->SetFrom($de, $de_nome);
-	$mail->Subject = $assunto;
-	$mail->Body = $corpo;
-	$mail->AddAddress($para);
-	if(!$mail->Send()) {
-		$error = 'Mail error: '.$mail->ErrorInfo; 
-		return false;
-	} else {
-		$error = 'Mensagem enviada!';
-		return true;
-	}
-}
+var_dump($mail);
+die;
+if(!$mail->Send()) // Envia o email
+ { 
+ echo "Erro no envio da mensagem";
+ } 
+?>

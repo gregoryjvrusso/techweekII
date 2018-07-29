@@ -92,26 +92,3 @@ $dompdf->stream(
     )
 );
 
- $mail = new PHPMailer();
- $mail->IsSMTP(); 
- $mail->CharSet = 'UTF-8';
- $mail->True;
- $mail->Host = "smtp.gmail.com"; // Servidor SMTP
- $mail->SMTPSecure = "tls"; // conexão segura com TLS
- $mail->Port = 587; 
- $mail->SMTPAuth = true; // Caso o servidor SMTP precise de autenticação
- $mail->Username = "gregoryjvrusso@gmail.com"; // SMTP username
- $mail->Password = "savoia1914"; // SMTP password
- $mail->From = "gregoryjvrusso@gmail.com"; // From
- $mail->FromName = "Sua Empresa" ; // Nome de quem envia o email
- $mail->AddAddress($mailDestino, $nome); // Email e nome de quem receberá //Responder
- $mail->WordWrap = 50; // Definir quebra de linha
- $mail->IsHTML = true ; // Enviar como HTML
- $mail->Subject = $assunto ; // Assunto
- $mail->Body = '<br/>' . 'Gregory' . '<br/>' ; //Corpo da mensagem caso seja HTML
-
-if(!$mail->Send()) // Envia o email
- { 
- echo "Erro no envio da mensagem";
- } 
-?>
