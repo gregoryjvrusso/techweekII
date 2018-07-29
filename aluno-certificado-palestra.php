@@ -73,11 +73,16 @@ $html = '<!doctype html>
 			<img src="img/brasao.png" id="brasao">
 		</div>
 		<p class="texto-principal" id="texto-principal">REPUBLICA FEDERATIVA DO BRASIL</p>
+		<br><br>
 		<p class="texto-principal" id="texto-principal">MINISTÉRIO DA EDUCAÇÃO</p>
 		<p class="texto-secundario">INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA SÃO PAULO</p>
+		<br>
 		<p class="texto-terceiro">Criado pela Lei nº 11.892 de 29/12/2008.</p>
+		<br>
 		<p class="texto-secundario">CÂMPUS CUBATÃO</p>
+		<br>
 		<p class="texto-terceiro">Endereço Rua Mª Cristina, 50, Jd. Casqueiro, Cubatão - SP</p>
+		<br>
 		<p class="texto-principal" id="certificado">CERTIFICADO</p>
 		<div id="texto-certificado">
 			<p>Certifico que <b>' . $aluno->getNomeAluno() . '</b>, . CPF: <b>' . $aluno->getCpf() . '</b> participou da Palestra <b>'. $palestra->getNome() . '</b> no <b>II Tech Week</b>, promovida pelo Instituto Federal de Educação, Ciência e Tecnologia de São Paulo - Campus Cubatão do período de 20 de Novembro a 25 de Novembro de 2018.</p>
