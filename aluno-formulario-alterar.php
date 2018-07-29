@@ -70,7 +70,7 @@ $presencas = listaPresencaAluno($conexao, $aluno->getId());
 			<div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra1" value="1" "<?= $aluno->buscarPalestrasAlterar($presencas, 1);?>">
+		        <input type="checkbox" class="filled-in" name="palestra1" value="1" checked="<?= $aluno->buscarPalestrasAlterar($presencas, 1);?>" />
 		        <span>Palestra 1 <small>19h45 às 20h40</small></span>
 		      </label>
 		    </p>
