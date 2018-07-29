@@ -11,10 +11,7 @@ require_once("banco-aluno.php");
 require_once("banco-palestra.php");
 require_once("usuario-logica.php");
 
-
-$aluno = buscaAlunoId($conexao, $_POST['id-aluno']);
-
-$palestra = buscaPalestra($conexao, $_POST['id-palestra']);
+$palestra = buscaPalestra($conexao, $_POST['id']);
 $presencas = listaPresencaPalestra($conexao, $palestra->getId());
 
 foreach($presencas as $presenca) { 
