@@ -73,6 +73,9 @@ class Aluno {
 	}
 
 	function buscarPalestrasAlterar($idPalestra){
+		var_dump($this->$id);
+		var_dump($conexao);
+		var_dump($idPalestra);
 		$presencas = listaPresencaAluno($conexao, $this->id);
 		$autenticador = false;
 		foreach($presencas as $presenca){
