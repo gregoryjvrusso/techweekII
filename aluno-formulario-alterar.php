@@ -116,11 +116,13 @@ $aluno = buscaAlunoId($conexao, $id);
 		$presencas = listaPresencaAluno($conexao, $aluno->id);
 		$autenticador = false;
 		foreach($presencas as $presenca){
+			var_dump($presenca);
 			if($presenca->getIdPalestra() == $idPalestra)
 				$autenticador = true;
 		}
+		var_dump($autenticador);die;
 		if($autenticador)
-			return '"checked"';
+			return "checked";
 		else
 			return null;
 	}
