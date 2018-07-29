@@ -99,12 +99,7 @@ $dompdf->set_paper('A4','landscape');
 
 $dompdf->render();
 
-$dompdf->stream(
-    "saida.pdf", 
-    array(
-        "Attachment" => false 
-    )
-);
+$output = $dompdf->output();
 
 $mail = new PHPMailer(true);
 try {
@@ -124,7 +119,7 @@ try {
     $mail->Subject = 'Here is the subject';
     $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
+	$mail->addAttachment($output,'application/pdf','output.pdf', false);
     $mail->send();
     echo 'Message has been sent';
 } catch (Exception $e) {
