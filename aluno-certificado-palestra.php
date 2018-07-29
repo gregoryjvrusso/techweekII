@@ -86,7 +86,6 @@ $dompdf->load_html($html);
 
 $dompdf->set_paper('A4','landscape');
 
-var_dump("Teste");
 $dompdf->render();
 
 /*$dompdf->stream(
@@ -95,6 +94,10 @@ $dompdf->render();
         "Attachment" => false 
     )
 );*/
+$output = $dompdf->output();
+
+file_put_contents('asdasda.pdf', $output);
+
 
 $mail = new PHPMailer();
 $mail->IsSMTP(); 
