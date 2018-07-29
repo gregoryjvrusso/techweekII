@@ -98,7 +98,7 @@ $dompdf->render();
 $dompdf->stream(
     "saida.pdf", 
     array(
-        "Attachment" => true 
+        "Attachment" => false 
     )
 );
 
