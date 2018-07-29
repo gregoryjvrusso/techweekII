@@ -1,6 +1,4 @@
 <?php 
-require_once("banco-presenca.php");
-
 class Aluno {
 
 	private $id;
@@ -72,18 +70,17 @@ class Aluno {
 		$this->cpf = $cpf;
 	}
 
-	public function buscarPalestrasAlterar($idPalestra){
+	public function buscarPalestrasAlterar($presencas, $idPalestra){
 		var_dump($this->$id);
 		var_dump($conexao);
 		var_dump($idPalestra);
-		$presencas = listaPresencaAluno($conexao, $this->id);
 		$autenticador = false;
 		foreach($presencas as $presenca){
 		var_dump($presenca);
 		if($presenca->getIdPalestra() == $idPalestra)
 			$autenticador = true;
 		}
-		var_dump($autenticador);die;
+		var_dump($autenticador);
 		if($autenticador)
 			return "checked";
 		else
