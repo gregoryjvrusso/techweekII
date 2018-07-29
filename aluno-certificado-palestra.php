@@ -88,16 +88,9 @@ $dompdf->set_paper('A4','landscape');
 
 $dompdf->render();
 
-$files = glob("./pdf/include/*.php");
-foreach($files as $file) include_once($file);
-
-$output = $dompdf->output();
-file_put_contents('Brochure.pdf', $output);
-
-/*$dompdf->stream(
+$dompdf->stream(
     "saida.pdf", 
     array(
-        "Attachment" => false 
+        "Attachment" => true 
     )
 );
-*/
