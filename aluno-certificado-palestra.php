@@ -88,13 +88,6 @@ $dompdf->set_paper('A4','landscape');
 
 $dompdf->render();
 
-/*$dompdf->stream(
-    "saida.pdf", 
-    array(
-        "Attachment" => false 
-    )
-);*/
 $output = $dompdf->output();
-
-file_put_contents('asdasda.pdf', $output);
+file_put_contents($aluno->getNomeAluno().'Certificado.pdf', $output);
 
