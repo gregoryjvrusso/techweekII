@@ -60,14 +60,14 @@ if($inserir) {
 
 		$inserirPresenca = inserePresenca($conexao, $presenca);
 	}
-	header("Location: aluno.php");
+	header("Location: aluno-lista.php");
 	die();
 	
 } else {
 	/*$msg = mysqli_error($conexao);
 	
 	$_SESSION["danger"] = "O Aluno não foi adicionado!  <?= $msg ?>";*/
-	header("Location: aluno.php");
+	header("Location: aluno-lista.php");
 	die();
 }
 

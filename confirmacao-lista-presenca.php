@@ -18,11 +18,19 @@ $presencas = listaPresencaPalestra($conexao, $palestra->getId());
 			<h2>Listagem de Presença</h2>
 		<h3><?= $palestra->getNome() ?></h3>
 		</div>
-		<div class="col m3 s12">
+		<div class="col m3 s6">
 			<form action="palestra-lista-impressa.php" method="post">
 				<input type="hidden" name="id" value="<?= $palestra->getId() ?>" />
-	      <button class="waves-effect waves-light blue btn">
+	      <button class="waves-effect waves-light orange btn">
 		    	<i class="material-icons">print</i>
+				</button>
+			</form>
+		</div>
+		<div class="col m3 s6">
+			<form action="palestra-email-certificados.php" method="post">
+				<input type="hidden" name="id" value="<?= $palestra->getId() ?>" />
+	      <button class="waves-effect waves-light blue btn">
+		    	<i class="material-icons">email</i>
 				</button>
 			</form>
 		</div>
