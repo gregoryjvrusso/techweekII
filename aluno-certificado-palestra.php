@@ -105,7 +105,7 @@ $mail = new PHPMailer;
 $mail->IsSMTP(true); // Define que a mensagem será SMTP
 $mail->Host = "smtp.gmail.com"; // Endereço do servidor SMTP
 $mail->Port = 587;
-$mail->SMTPAuth = true
+$mail->SMTPAuth = true;
 $mail->SMTPSecure = 'ssl';
 
 $mail->setFrom('gregoryjvrusso@gmail.com', 'Your Name');
