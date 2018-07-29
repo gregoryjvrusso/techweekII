@@ -117,9 +117,9 @@ $aluno = buscaAlunoId($conexao, $id);
 		$autenticador = false;
 		foreach($presencas as $presenca){
 			if($presenca->getIdPalestra() == $idPalestra)
-				autenticador = true;
+				$autenticador = true;
 		}
-		if(autenticador)
+		if($autenticador)
 			return "checked";
 		else
 			return "";
