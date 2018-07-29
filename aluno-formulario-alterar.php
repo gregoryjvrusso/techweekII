@@ -78,7 +78,7 @@ $presencas = listaPresencaAluno($conexao, $aluno->getId());
 	    <div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra2" value="2" <?php $aluno->buscarPalestrasAlterar($presencas, 2); ?>>
+		        <input type="checkbox" class="filled-in" name="palestra2" value="2" <?php if($aluno->buscarPalestrasAlterar($presencas, 2)) echo "checked"?> >
 		        <span>Palestra 2 <small>21h00 às 21h40</small></span>
 		      </label>
 		    </p>
@@ -90,7 +90,7 @@ $presencas = listaPresencaAluno($conexao, $aluno->getId());
 			<div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra3" value="3" <?php $aluno->buscarPalestrasAlterar($presencas, 3); ?>>
+		        <input type="checkbox" class="filled-in" name="palestra3" value="3" <?php if($aluno->buscarPalestrasAlterar($presencas, 3)) echo "checked"?>>
 		        <span>Palestra 3 <small>19h45 às 20h40</small></span>
 		      </label>
 		    </p>
@@ -98,7 +98,7 @@ $presencas = listaPresencaAluno($conexao, $aluno->getId());
 	    <div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra4" value="4" <?php $aluno->buscarPalestrasAlterar($presencas, 4); ?>>
+		        <input type="checkbox" class="filled-in" name="palestra4" value="4" <?php if($aluno->buscarPalestrasAlterar($presencas, 4)) echo "checked"?>>
 		        <span>Palestra 4 <small>21h00 às 21h40</small></span>
 		      </label>
 		    </p>
