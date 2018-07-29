@@ -21,6 +21,6 @@ function logaUsuario($login) {
 }
 
 function logout() {
-    session_destroy();
-    session_start();
+  session_destroy();
+  session_start();
 }
