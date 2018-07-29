@@ -23,7 +23,6 @@ class Aluno {
 
 	public function getPrimeiroNome(){
 		$nome = explode(" ", $this->nome_aluno);
-		var_dump($nome[0]);die;
 		return $nome[0];
 	}
 
