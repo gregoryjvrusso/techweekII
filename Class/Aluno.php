@@ -71,22 +71,12 @@ class Aluno {
 	}
 
 	public function buscarPalestrasAlterar($presencas, $idPalestra){
-		var_dump($this->$id);
-		var_dump($conexao);
-		var_dump($idPalestra);
 		$autenticador = false;
 		foreach($presencas as $presenca){
-			var_dump($presenca);
 			if($presenca->getIdPalestra() == $idPalestra){
 				$autenticador = true;
 			}
 		}
-		var_dump($autenticador);
-		if($autenticador){
-			return "checked";
-		}
-		else{
-			return null;
-		}
+		return $autenticador;
 	}
 }
