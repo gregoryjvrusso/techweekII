@@ -69,7 +69,7 @@ $presencas = listaPresencaAluno($conexao, $aluno->getId());
 						<form action="aluno-enviar-certificado.php" method="post">
 							<input type="hidden" name="id-aluno" value="<?= $aluno->getId() ?>" />
 							<input type="hidden" name="id-palestra" value="<?= $palestra->getId() ?>">
-							<button class="waves-effect waves-light green btn">
+							<button class="waves-effect waves-light blue btn">
 								<i class="material-icons">email</i>
 							</button>
 						</form>
