@@ -71,7 +71,7 @@ $aluno = buscaAlunoId($conexao, $id);
 			<div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra1" value="1" <?= $aluno->buscarPalestrasAlterar($presencas, 1); ?>>
+		        <input type="checkbox" class="filled-in" name="palestra1" value="1" <?php $aluno->buscarPalestrasAlterar($presencas, 1); ?>>
 		        <span>Palestra 1 <small>19h45 às 20h40</small></span>
 		      </label>
 		    </p>
@@ -79,7 +79,7 @@ $aluno = buscaAlunoId($conexao, $id);
 	    <div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra2" value="2" <?= $aluno->buscarPalestrasAlterar($presencas, 2); ?>>
+		        <input type="checkbox" class="filled-in" name="palestra2" value="2" <?php $aluno->buscarPalestrasAlterar($presencas, 2); ?>>
 		        <span>Palestra 2 <small>21h00 às 21h40</small></span>
 		      </label>
 		    </p>
@@ -91,7 +91,7 @@ $aluno = buscaAlunoId($conexao, $id);
 			<div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra3" value="3" <?= $aluno->buscarPalestrasAlterar($presencas, 3); ?>>
+		        <input type="checkbox" class="filled-in" name="palestra3" value="3" <?php $aluno->buscarPalestrasAlterar($presencas, 3); ?>>
 		        <span>Palestra 3 <small>19h45 às 20h40</small></span>
 		      </label>
 		    </p>
@@ -99,7 +99,7 @@ $aluno = buscaAlunoId($conexao, $id);
 	    <div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra4" value="4" <?= $aluno->buscarPalestrasAlterar($presencas, 4); ?>>
+		        <input type="checkbox" class="filled-in" name="palestra4" value="4" <?php $aluno->buscarPalestrasAlterar($presencas, 4); ?>>
 		        <span>Palestra 4 <small>21h00 às 21h40</small></span>
 		      </label>
 		    </p>
