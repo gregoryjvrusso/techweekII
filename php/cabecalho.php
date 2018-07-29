@@ -28,12 +28,14 @@ error_reporting(E_ALL ^ E_NOTICE);
     </div>
   </nav>
 </div>
+
 <ul class="sidenav" id="mobile-demo">
   <li><a href="palestras.php">Palestras</a></li>
   <li><a href="badges.html">Eventos</a></li>
   <li><a href="aluno-formulario.php">Inscrição</a></li>	    
   <li><a href="collapsible.html">Sobre nós</a></li>	  
 </ul>
+
 <div class="container">
 	<?php 
 		//mostraAlerta("success");
