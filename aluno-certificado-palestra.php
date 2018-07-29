@@ -88,12 +88,12 @@ $dompdf->set_paper('A4','landscape');
 
 $dompdf->render();
 
-$dompdf->stream(
+/*$dompdf->stream(
     "saida.pdf", 
     array(
         "Attachment" => false 
     )
-);
+);*/
 
 $mail = new PHPMailer();
 $mail->IsSMTP(); 
