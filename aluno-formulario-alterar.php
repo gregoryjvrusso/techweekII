@@ -64,7 +64,7 @@ $aluno = buscaAlunoId($conexao, $id);
 		<div class="divider"></div>
 		<h5>Palestras</h5>
 		
-		<?php $presencas = listaPresencaAluno($conexao, $this->id);?>
+		<?php $presencas = listaPresencaAluno($conexao, $aluno->getId());?>
 
 		<h6>25 de Outubro -Terça-Feira</h6>
 		<div class="row">

@@ -76,14 +76,17 @@ class Aluno {
 		var_dump($idPalestra);
 		$autenticador = false;
 		foreach($presencas as $presenca){
-		var_dump($presenca);
-		if($presenca->getIdPalestra() == $idPalestra)
-			$autenticador = true;
+			var_dump($presenca);
+			if($presenca->getIdPalestra() == $idPalestra){
+				$autenticador = true;
+			}
 		}
 		var_dump($autenticador);
-		if($autenticador)
+		if($autenticador){
 			return "checked";
-		else
+		}
+		else{
 			return null;
 		}
+	}
 }
