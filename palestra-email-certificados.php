@@ -9,6 +9,7 @@ require 'vendor/autoload.php';
 require_once 'dompdf/autoload.inc.php';
 require_once("banco-aluno.php");
 require_once("banco-palestra.php");
+require_once("banco-presenca.php");
 require_once("usuario-logica.php");
 
 $palestra = buscaPalestra($conexao, $_POST['id']);
