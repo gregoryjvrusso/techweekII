@@ -86,6 +86,7 @@ $dompdf->load_html($html);
 
 $dompdf->set_paper('A4','landscape');
 
+var_dump("Teste");
 $dompdf->render();
 
 /*$dompdf->stream(
