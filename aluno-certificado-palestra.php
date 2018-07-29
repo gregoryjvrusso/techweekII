@@ -102,7 +102,7 @@ $dompdf->render();
 
 $mail = new PHPMailer(true);
 try {
-    $mail->SMTPDebug = 0;                              
+    $mail->SMTPDebug = 2;                              
     $mail->isSMTP();                            
 	$mail->Host = 'smtp.gmail.com';
 	$mail->Port = 587;
