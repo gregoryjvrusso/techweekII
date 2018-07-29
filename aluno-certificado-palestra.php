@@ -1,5 +1,8 @@
 <?php
 //Load Composer's autoloader
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 require 'vendor/autoload.php';
 
 require_once("dompdff/dompdf_config.inc.php");
@@ -104,8 +107,7 @@ $dompdf->stream(
     )
 );
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+
 
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
