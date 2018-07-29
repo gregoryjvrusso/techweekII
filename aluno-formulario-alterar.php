@@ -69,7 +69,7 @@ $aluno = buscaAlunoId($conexao, $id);
 			<div class="col m6 s12">
 		    <p>
 		      <label>
-		        <input type="checkbox" class="filled-in" name="palestra1" value="1" <?= buscarPalestrasAlterar($aluno, 1); \?>>
+		        <input type="checkbox" class="filled-in" name="palestra1" value="1" <?= buscarPalestrasAlterar($aluno, 1); ?>/>
 		        <span>Palestra 1 <small>19h45 às 20h40</small></span>
 		      </label>
 		    </p>
